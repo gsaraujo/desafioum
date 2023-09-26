@@ -2,11 +2,10 @@ package gustavo.desafiocielo.desafioum.product;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Fisica extends Pessoa {

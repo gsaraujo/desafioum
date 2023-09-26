@@ -2,20 +2,21 @@ package gustavo.desafiocielo.desafioum;
 
 import gustavo.desafiocielo.desafioum.product.Fisica;
 import gustavo.desafiocielo.desafioum.product.Juridica;
-import gustavo.desafiocielo.desafioum.repository.PessoaRepository;
-import lombok.extern.slf4j.Slf4j;
+import gustavo.desafiocielo.desafioum.repository.FisicaRepository;
+import gustavo.desafiocielo.desafioum.repository.JuridicaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-
-public class LoadDatabase {
+@Configuration
+class LoadDatabase {
 
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
     @Bean
-    CommandLineRunner initFisica(PessoaRepository repository) {
+    CommandLineRunner initFisica(FisicaRepository repository) {
         return args-> {
             log.info("Preloading " + repository.save(new Fisica(1234,"57182979080","Pessoa da Silva","email@email.com" )));
             log.info("Preloading " + repository.save(new Fisica(4567,"21582706085","Pessoa Santos","santos@email.com" )));
@@ -25,7 +26,7 @@ public class LoadDatabase {
     }
 
     @Bean
-    CommandLineRunner initJuridica(PessoaRepository repository){
+    CommandLineRunner initJuridica(JuridicaRepository repository){
         return args -> {
             log.info("Preloading " + repository.save(new Juridica(1234,"58919081077","Pessoa da Anonima","anonima@email.com", "97468806000140", "paulo bonfa ringling brothers capillar consultants")));
             log.info("Preloading " + repository.save(new Juridica(1234,"57519044009","Pessoa da Conhecida","conhecida@email.com", "15414117000199", "Portas e cia")));
