@@ -1,7 +1,7 @@
 package gustavo.desafiocielo.desafioum.controller;
 
 
-import gustavo.desafiocielo.desafioum.exception.PessoaNaoEncontradaException;
+import gustavo.desafiocielo.desafioum.exception.FisicaNaoEncontradaException;
 import gustavo.desafiocielo.desafioum.models.Fisica;
 import gustavo.desafiocielo.desafioum.repository.FisicaRepository;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,7 +9,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Tag(name = "Física")
 @RestController
@@ -25,7 +24,13 @@ public class FisicaController {
     @PostMapping("/fisica")
     @Operation(summary = "Nova pessoa", description = "Endpoint para cadastro de novas pessoas físicas")
     Fisica novaFisica(@RequestBody Fisica fisica) {
-        return fisicaRepository.save(fisica);
+        if(!fisicaRepository.existsById(fisica.getCpf())) {
+            return fisicaRepository.save(fisica);
+        }
+        else {
+            throw new FisicaNaoEncontradaException(fisica.getCpf());
+        }
+
     }
 
     @Operation(summary = "Busca de pessoas físicas", description = "Endpoint para buscar todas as pessoas físicas cadastradas")
@@ -38,7 +43,7 @@ public class FisicaController {
     @GetMapping("/fisica/{cpf}")
     Fisica pesquisaFisica(@PathVariable String cpf) {
         return fisicaRepository.findById(cpf)
-                .orElseThrow(() -> new PessoaNaoEncontradaException(cpf));
+                .orElseThrow(() -> new FisicaNaoEncontradaException(cpf));
     }
 
     @Operation(summary = "Atualização de pessoa física", description = "Endpoint para atualização de dados de pessoa física")
@@ -52,10 +57,7 @@ public class FisicaController {
                     fisica.setEmail(novaFisica.getEmail());
                     return fisicaRepository.save(fisica);
                 })
-                .orElseGet(()-> {
-                    novaFisica.setCpf(cpf);
-                    return fisicaRepository.save(novaFisica);
-                });
+                .orElseThrow(()-> new FisicaNaoEncontradaException(novaFisica.getCpf()));
     }
 
     @Operation(summary = "Exclusão de pessoa física", description = "Endpoint para exclusão de pessoa física")
