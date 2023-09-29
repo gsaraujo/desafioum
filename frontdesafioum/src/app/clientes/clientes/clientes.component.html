@@ -1,1 +1,46 @@
-<p>clientes works!</p>
+<mat-card>
+  <mat-toolbar>Cliente pré-cadastrados</mat-toolbar>
+
+  <table mat-table [dataSource]="clientes" class="mat-elevation-z8">
+    
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let cliente"> {{  cliente.nome }} </td>
+      </ng-container>
+    
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email </th>
+        <td mat-cell *matCellDef="let cliente"> {{ cliente.email }} </td>
+      </ng-container>
+    
+      <!-- MCC Column -->
+      <ng-container matColumnDef="mcc">
+        <th mat-header-cell *matHeaderCellDef> MCC </th>
+        <td mat-cell *matCellDef="let cliente"> {{ cliente.mcc }} </td>
+      </ng-container>
+    
+      <!-- CPF Column -->
+      <ng-container matColumnDef="cpf">
+        <th mat-header-cell *matHeaderCellDef> CPF </th>
+        <td mat-cell *matCellDef="let cliente"> {{ cliente.cpf }} </td>
+      </ng-container>
+
+      <!-- CNPJ Column -->
+      <ng-container matColumnDef="cnpj">
+          <th mat-header-cell *matHeaderCellDef> CNPJ </th>
+          <td mat-cell *matCellDef="let cliente"> {{ cliente.cnpj }} </td>
+        </ng-container>
+
+        <!-- Razão Social Column -->
+      <ng-container matColumnDef="razaosocial">
+          <th mat-header-cell *matHeaderCellDef> Razão Social </th>
+          <td mat-cell *matCellDef="let cliente"> {{ cliente.razaosocial }} </td>
+        </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-card>    
+    
