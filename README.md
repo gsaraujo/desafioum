@@ -13,4 +13,4 @@ Rode `ng serve` para o subir a aplicação Angular. Vá até `http://localhost:4
 
 ## Swagger
 
-Pacote construido utilizando o swagger 3.0. Para acessar a documentação (swagger) é necessário rodar a aplicação e acessar o endereço `http://localhost:8080/swagger-ui/index.html`.
+Pacote construido utilizando o swagger 3.0 e dependência (springdoc-openapi-starter-webmvc-ui). Para acessar a documentação (swagger) é necessário rodar a aplicação e acessar o endereço `http://localhost:8080/swagger-ui/index.html`.
