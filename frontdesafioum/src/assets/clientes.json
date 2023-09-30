@@ -1,0 +1,49 @@
+[
+    {
+        "cnpj": "",
+		"razaoSocial": "",
+		"cpf": "57182979080",
+		"mcc": "1234",
+		"nome": "Pessoa da Silva",
+		"email": "email@email.com"
+	},
+	{
+        "cnpj": "",
+		"razaoSocial": "",
+		"cpf": "21582706085",
+		"mcc": "4567",
+		"nome": "Pessoa Santos",
+		"email": "santos@email.com"
+	},
+	{
+        "cnpj": "",
+		"razaoSocial": "",
+		"cpf": "79372668052",
+		"mcc": "8988",
+		"nome": "Pessoa Pessoa",
+		"email": "pessoa@email.com"
+	},
+	{
+		"cpf": "48004270026",
+		"mcc": "1454",
+		"nome": "Pessoa da Pessoa",
+		"email": "pdapessoa@email.com"
+	},
+    {
+		"cnpj": "50495742000103",
+		"razaoSocial": "Piscinas e cia",
+		"cpf": "88697699096",
+		"mcc": "1234",
+		"nome": "Pessoa da Sem Conhecer",
+		"email": "semconhecer@email.com"
+	},
+
+	{
+		"cnpj": "19737925000148",
+		"razaoSocial": "Madeira e cia",
+		"cpf": "09176589064",
+		"mcc": "1234",
+		"nome": "Pessoa Para Conhecer",
+		"email": "conhecer@email.com"
+	}
+]
