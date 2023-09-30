@@ -36,7 +36,7 @@ public class JuridicaController {
     @Operation(summary = "Buscar pessoa jurídica", description = "Endpoint para buscar pessoa jurídica pelo CNPJ")
     @GetMapping("/juridica/{cnpj}")
     Optional<Juridica> pesquisaJuridica(@PathVariable String cnpj) {
-        return JuridicaRepository.findById(cnpj); //.orElseThrow(() -> new PessoaNaoEncontradaException(cpf));
+        return JuridicaRepository.findById(cnpj); //.orElseThrow(() -> new FisicaNaoEncontradaException(cpf));
     }
 
 
