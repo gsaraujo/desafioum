@@ -18,6 +18,6 @@ public class Fisica implements Pessoa{
 
     private String mcc;
     private String nome;
-    @Pattern(regexp = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")
+    @Pattern(regexp = "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$", message = "O email precisa estar no padrão email@servidor.com")
     private String email;
 }

@@ -21,7 +21,7 @@ public class FisicaRepositoryTests {
                 .nome("NOME DA PESSOA")
                 .cpf("58554552569")
                 .mcc("5878")
-                .email("email@email.com")
+                .email("ble")
                 .build();
 
         Fisica fisicaSalva = fisicaRepository.save(fisica);

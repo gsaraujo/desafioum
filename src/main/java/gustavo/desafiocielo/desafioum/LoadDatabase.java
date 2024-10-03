@@ -18,10 +18,10 @@ class LoadDatabase {
     @Bean
     CommandLineRunner initFisica(FisicaRepository repository) {
         return args-> {
-            log.info("Preloading " + repository.save(new Fisica("57182979080", "1234","Pessoa da Silva","email@email.com" )));
-            log.info("Preloading " + repository.save(new Fisica("21582706085", "4567","Pessoa Santos","santos@email.com" )));
-            log.info("Preloading " + repository.save(new Fisica("79372668052","8988","Pessoa Pessoa","pessoa@email.com" )));
-            log.info("Preloading " + repository.save(new Fisica("48004270026","1454","Pessoa da Pessoa","pdapessoa@email.com" )));
+            log.info("Preloading " + repository.save(new Fisica("57182979080", "1234","Pessoa da Silva","wjwj" )));
+            log.info("Preloading " + repository.save(new Fisica("21582706085", "4567","Pessoa Santos","wjwu" )));
+            log.info("Preloading " + repository.save(new Fisica("79372668052","8988","Pessoa Pessoa","w" )));
+            log.info("Preloading " + repository.save(new Fisica("48004270026","1454","Pessoa da Pessoa","123" )));
         };
     }
 
